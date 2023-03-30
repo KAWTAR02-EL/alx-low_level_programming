@@ -9,7 +9,7 @@
 */
 
 
-int -strlen(char *s)
+int _strlen(char *s)
 {
 	int counter;
 
@@ -18,4 +18,3 @@ int -strlen(char *s)
 
 	return (counter);
 }
-

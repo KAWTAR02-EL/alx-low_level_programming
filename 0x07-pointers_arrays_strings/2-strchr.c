@@ -1,21 +1,20 @@
 #include "main.h"
 /**
- *  *_strchr - fills memory with a constant byte.
- *  @s: pointer to put the constant
- *  @c: constant
- *  Return: pointer to s
-*/
+ * _strspn - gets lenght of a prefix substring
+ * @s: string
+ * @accept: bytes
+ * return: number of bytes in th initial segment of s
+ *                which consist only of bytes from accept
+ * return: number of bytes in th initial segment of s which 
+ * consist only of bytes from accept
+ */
 
-char *_strchr(char *s, char c)
+unsigned int _strspn(char *s, char *accept)
 {
-	int itr;
-
-	for (itr = 0; s[itr] >= '\0' ; itr++)
-	{
-		if (s[itr] == c)
-		{
-			return (s + itr);
-		}
-	}
-	return ('\0');
+	unsigned int i, j;
+	for (i = 0 ; s[i] != '\0' ; i++)
+		for (j = 0 ; accept[j] != s[i] ; j++)
+			if (accept[j] == '\0')
+				return (i);
+	return (i);
 }
